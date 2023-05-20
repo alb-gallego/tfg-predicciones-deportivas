@@ -1,0 +1,1 @@
+export 'package:tfg_app/models/match.dart';
