@@ -1,6 +1,8 @@
-<NavBar />
-<div class="flex sm:flex-row flex-col overflow-x-auto p-11">
-  <Match-card />
-  <Match-card />
+<div
+  class="flex sm:flex-col md:flex-row overflow-x-auto lg:flex-row p-11 max-w-full"
+>
+  {{#each @model as |matchData|}}
+    <Match-card @match={{matchData}} />
+  {{/each}}
 
 </div>

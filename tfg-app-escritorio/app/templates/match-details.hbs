@@ -12,15 +12,17 @@
           height="100"
           width="100"
           alt="Escudo betis"
-        />Real Betis
+        />{{@model.equipo_local}}
       </div>
 
       <div class="p-4 font-bold text-center">1
-        <div>50%</div>
+        <div>{{@model.porcentaje_victoria_local}}%</div>
       </div>
-      <div class="p-4 font-bold text-center">X</div>
+      <div class="p-4 font-bold text-center">X
+        <div>{{@model.porcentaje_empate}}%</div>
+      </div>
       <div class="p-4 font-bold text-center">2
-        <div>50%</div>
+        <div>{{@model.porcentaje_victoria_visitante}}%</div>
       </div>
       <div class="text-center mx-4">
         <p class="font-semibold">Visitante</p>
@@ -30,11 +32,11 @@
           height="100"
           width="100"
           alt="Escudo betis"
-        />Real Betis
+        />{{@model.equipo_visitante}}
       </div>
     </div>
 
     <div class="text-center mt-4"><p class="font-bold text-xl">Fecha</p>
-      <div class="text-center text-md">10/05/23 - 16:15</div>
+      <div class="text-center text-md">{{@model.fecha}}</div>
     </div>
   </div></div>
