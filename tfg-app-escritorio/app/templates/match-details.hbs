@@ -1,11 +1,13 @@
 <div class="flex items-center justify-center mt-4 p-4">
 
   <div
-    class="flex justify-center items-center rounded-lg bg-slate-100 p-5 m-6 flex-col min-w-full min-h-[500px] text-3xl"
+    class="flex justify-center flex-col flex-wrap items-center rounded-lg bg-slate-100 p-5 m-6 min-w-full min-h-[500px] text-3xl"
   >
 
-    <div class="flex">
-      <div class="text-center mx-4">
+    <div
+      class="flex flex-wrap items-center justify-center sm:flex-row md:flex-row flex-col"
+    >
+      <div class="text-center mx-4 flex justify-center items-center flex-col">
         <p class="font-semibold">Local</p>
         <img
           src="https://img2.freepng.es/20180601/glx/kisspng-real-betis-fminas-real-madrid-c-f-201718-la-5b1202f41633b4.236677671527907060091.jpg"
@@ -14,19 +16,21 @@
           alt="Escudo betis"
         />{{@model.equipo_local}}
       </div>
-
-      <div class="p-4 font-bold text-center">1
-        <div>{{@model.porcentaje_victoria_local}}%</div>
+      <div
+        class="flex items-center justify-center flex-wrap sm:flex-row flex-col"
+      >
+        <div class="p-4 font-bold text-center">1
+          <div>{{@model.porcentaje_victoria_local}}%</div>
+        </div>
+        <div class="p-4 font-bold text-center">X
+          <div>{{@model.porcentaje_empate}}%</div>
+        </div>
+        <div class="p-4 font-bold text-center">2
+          <div>{{@model.porcentaje_victoria_visitante}}%</div>
+        </div>
       </div>
-      <div class="p-4 font-bold text-center">X
-        <div>{{@model.porcentaje_empate}}%</div>
-      </div>
-      <div class="p-4 font-bold text-center">2
-        <div>{{@model.porcentaje_victoria_visitante}}%</div>
-      </div>
-      <div class="text-center mx-4">
+      <div class="text-center mx-4 flex justify-center items-center flex-col">
         <p class="font-semibold">Visitante</p>
-
         <img
           src="https://img2.freepng.es/20180601/glx/kisspng-real-betis-fminas-real-madrid-c-f-201718-la-5b1202f41633b4.236677671527907060091.jpg"
           height="100"
@@ -35,8 +39,30 @@
         />{{@model.equipo_visitante}}
       </div>
     </div>
+    <div class="divide-y-2 divide-black divide-solid">
+      <div class="text-center mt-4"><p class="font-bold text-xl">Fecha</p>
+        <div class="text-center text-md">{{@model.fecha}}</div>
+      </div>
 
-    <div class="text-center mt-4"><p class="font-bold text-xl">Fecha</p>
-      <div class="text-center text-md">{{@model.fecha}}</div>
+      <div class="text-center mt-4">
+        <p class="font-bold text-xl">Resultado esperado al descanso</p>
+        <div class="flex flex-row items-center justify-center">
+          <p class="text-center text-md">{{@model.goles_local_descanso}}</p>
+          <p class="text-md mx-3">-</p>
+          <p class="text-center text-md">{{@model.goles_visitante_descanso}}</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="font-bold text-xl">Resultado esperado al final</p>
+        <div class="flex flex-row items-center justify-center">
+          <div class="text-center text-md">{{@model.goles_local_final}}</div>
+          <p class="text-md mx-3">-</p>
+          <div
+            class="text-center text-md"
+          >{{@model.goles_visitante_final}}</div>
+        </div>
+      </div>
     </div>
-  </div></div>
+  </div>
+</div>
