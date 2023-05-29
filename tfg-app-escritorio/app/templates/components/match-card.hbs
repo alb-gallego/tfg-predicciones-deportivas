@@ -1,45 +1,60 @@
 <LinkTo @route="match-details" @model={{@match.id}}>
-  <div class="flex flex-col mx-5 my-7 bg-slate-200 rounded shadow-lg">
-    <div
-      id="details"
-      class="flex justify-center items-center sm:flex-row flex-col"
-    >
-      <p>{{@match.equipo_local}}</p>
+  <div
+    class="flex flex-col sm:flex-row justify-center items-center my-5 rounded shadow-lg bg-slate-100 hover:bg-slate-400"
+  >
+    <div class="p-5 max-w-sm text-center">
+      <p class="font-extrabold p-3">Local</p>
       <img
-        class="p-4 max-w-[150px] max-h-[150px]"
-        src="https://www.sevillafc.es/sites/default/files/styles/cuadrada_600x600/public/history/entities/escudosuizo.jpg?itok=kxf1CTrZ"
-        alt="Escudo"
+        src="https://img2.freepng.es/20180601/glx/kisspng-real-betis-fminas-real-madrid-c-f-201718-la-5b1202f41633b4.236677671527907060091.jpg"
+        alt="Escudo betis"
+        class="max-w-full"
       />
-      <div class="flex flex-row">
 
-        <div class="flex flex-col text-center p-4">
-          <p class="font-semibold">1</p>
-          <p class="font-bold">{{@match.porcentaje_victoria_local}}%</p>
+      <p class="p-3">
+        {{@match.equipo_local}}
+      </p>
+    </div>
+    <div class="flex flex-col justify-between items-center">
+      <div class="p-4 flex flex-row lg:space-x-9 font-extrabold">
+
+        <div class="p-4 sm:p-2 flex flex-col text-center font-extrabold">
+          <p>1</p>
+          <p>
+            {{@match.porcentaje_victoria_local}}%
+          </p>
         </div>
-        <div class="flex flex-col text-center p-4">
-          <p class="font-semibold">X</p>
-          <p class="font-bold">{{@match.porcentaje_empate}}%</p>
+        <div class="p-4 sm:p-2 flex flex-col text-center font-extrabold">
+          <p>X</p>
+
+          <p>{{@match.porcentaje_empate}}%</p>
+
         </div>
-        <div class="flex flex-col text-center p-4">
-          <p class="font-semibold">1</p>
-          <p class="font-bold">{{@match.porcentaje_victoria_visitante}}%</p>
+        <div class="p-4 sm:p-2 flex flex-col text-center font-extrabold">
+          <p>2</p>
+
+          <p>{{@match.porcentaje_victoria_visitante}}%</p>
         </div>
+      </div>
+
+      <div class="flex flex-col text-center justify-center">
+        <p class="font-extrabold">Fecha</p>
+        <p>{{@match.fecha}}</p>
 
       </div>
+    </div>
+    <div class="p-5 max-w-sm text-center">
+      <p class="font-extrabold p-3">Visitante</p>
       <img
-        class="p-4 max-w-[150px] max-h-[150px]"
-        src="https://www.sevillafc.es/sites/default/files/styles/cuadrada_600x600/public/history/entities/escudosuizo.jpg?itok=kxf1CTrZ"
-        alt="Escudo"
+        src="https://img2.freepng.es/20180601/glx/kisspng-real-betis-fminas-real-madrid-c-f-201718-la-5b1202f41633b4.236677671527907060091.jpg"
+        alt="Escudo betis"
+        class="max-w-full"
       />
-      <p>{{@match.equipo_visitante}}</p>
 
+      <p class="p-3">
+        {{@match.equipo_visitante}}
+      </p>
     </div>
-    <div
-      id="date"
-      class="flex justify-center text-center items-center flex-col"
-    >
-      <p class="font-extrabold py-4">Fecha</p>
-      <p>{{@match.fecha}}</p>
-    </div>
+
   </div>
+
 </LinkTo>
