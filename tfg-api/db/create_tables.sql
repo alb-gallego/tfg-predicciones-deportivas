@@ -10,6 +10,10 @@ CREATE TABLE partidos (
 	porcentaje_empate REAL,
 	porcentaje_victoria_local REAL,
 	porcentaje_victoria_visitante REAL NOT_NULL
+	goles_local_real INTEGER,
+	goles_visitante_real INTEGER,
+	ganador TEXT
+
 );
 
 CREATE TABLE images (

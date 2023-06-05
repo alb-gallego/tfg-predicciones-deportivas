@@ -4,19 +4,6 @@ const sqlite3 = require("sqlite3").verbose();
 // Crea una nueva instancia de la base de datos y abre la conexión
 let db = new sqlite3.Database("dbtfg.sqlite");
 
-// db.run(
-//   `CREATE TABLE images (
-//   id INTEGER PRIMARY KEY,
-//   image BLOB,
-//   image_name TEXT);`,
-//   function (err) {
-//     if (err) {
-//       return console.error(err.message);
-//     }
-//     console.log(`Se ha creado la tabla IMAGES`);
-//   }
-// );
-
 const fs = require("fs");
 
 const folderPath = "./escudos";

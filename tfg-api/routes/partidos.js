@@ -3,7 +3,7 @@ var router = express.Router();
 const sqlite3 = require("sqlite3").verbose();
 
 // Crea una nueva instancia de la base de datos SQLite
-const db = new sqlite3.Database("dbtfg.sqlite");
+const db = new sqlite3.Database("./db/dbtfg.sqlite");
 
 function selectSQLquery(req) {
   let res = {
