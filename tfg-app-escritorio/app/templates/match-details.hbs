@@ -10,10 +10,8 @@
       <div class="text-center mx-4 flex justify-center items-center flex-col">
         <p class="font-semibold">Local</p>
         <img
-          src="https://img2.freepng.es/20180601/glx/kisspng-real-betis-fminas-real-madrid-c-f-201718-la-5b1202f41633b4.236677671527907060091.jpg"
-          height="100"
-          width="100"
-          alt="Escudo betis"
+          src="../assets/images/escudos/{{@model.equipo_local}}.png"
+          alt="Escudo {{@model.equipo_local}}"
         />{{@model.equipo_local}}
       </div>
       <div
@@ -32,10 +30,10 @@
       <div class="text-center mx-4 flex justify-center items-center flex-col">
         <p class="font-semibold">Visitante</p>
         <img
-          src="https://img2.freepng.es/20180601/glx/kisspng-real-betis-fminas-real-madrid-c-f-201718-la-5b1202f41633b4.236677671527907060091.jpg"
+          src="../assets/images/escudos/{{@model.equipo_visitante}}.png"
           height="100"
           width="100"
-          alt="Escudo betis"
+          alt="Escudo {{@model.equipo_visitante}}"
         />{{@model.equipo_visitante}}
       </div>
     </div>
