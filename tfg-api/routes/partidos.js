@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-const JSONAPISerializer = require("jsonapi-serializer").Serializer;
 const sqlite3 = require("sqlite3").verbose();
 
 // Crea una nueva instancia de la base de datos SQLite

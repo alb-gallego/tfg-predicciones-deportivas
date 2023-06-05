@@ -1,20 +1,8 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import { Match } from 'tfg-app/types/match-types';
 
-interface Match {
-  equipo_local: string;
-  equipo_visitante: string;
-  fecha: string;
-  goles_local_descanso: number;
-  goles_local_final: number;
-  goles_visitante_descanso: number;
-  goles_visitante_final: number;
-  id: number;
-  porcentaje_empate: number;
-  porcentaje_victoria_local: number;
-  porcentaje_victoria_visitante: number;
-}
 interface MatchCardArgs {
   match: Match;
 }
@@ -29,4 +17,17 @@ export default class MatchCard extends Component<MatchCardArgs> {
     this.imgLocal = this.args.match.equipo_local;
     return;
   }
+
+  // async getEscudo() {
+  //   const responseEscudos = await fetch(
+  //     'http://localhost:3000/escudos?name=Valladolid'
+  //   );
+  //   console.log(responseEscudos);
+
+  //   const escudos = await responseEscudos.blob();
+  //   const escudoRender = URL.createObjectURL(escudos);
+  //   console.log(escudoRender);
+
+  //   return escudoRender;
+  // }
 }

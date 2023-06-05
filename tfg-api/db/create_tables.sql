@@ -11,3 +11,9 @@ CREATE TABLE partidos (
 	porcentaje_victoria_local REAL,
 	porcentaje_victoria_visitante REAL NOT_NULL
 );
+
+CREATE TABLE images (
+  id INTEGER PRIMARY KEY,
+  data BLOB
+);
+

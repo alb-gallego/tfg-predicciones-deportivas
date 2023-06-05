@@ -1,0 +1,19 @@
+<div class="flex justify-center items-center">
+  <label for="order" class="mx-2 border-2 border-black">
+    <span class="font-semibold text-xl px-2 py-3">Select Team:</span>
+    <select name="team_selector" id="" {{on "change" this.getMatchesByTeam}}>
+      {{#each this.allTeams as |teamName|}}
+        <option value="{{teamName}}">{{teamName}}</option>
+      {{/each}}
+    </select>
+  </label>
+</div>
+
+<div
+  class="flex flex-col items-center justify-center overflow-auto p-5 max-w-full"
+>
+  {{#each this.results as |match|}}
+    <Match-card @match={{match}} />
+  {{/each}}
+
+</div>
