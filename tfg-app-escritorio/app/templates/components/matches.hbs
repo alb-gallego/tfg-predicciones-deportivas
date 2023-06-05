@@ -2,17 +2,31 @@
 <div class="flex justify-center items-center mt-5 p-3">
   <label for="order" class="mx-2 border-2 border-black">
     <span class="font-semibold text-xl px-2 py-3">Selecciona un equipo:</span>
-    <select name="team_selector" {{on "change" this.getMatchesByTeam}}>
+    <select
+      class="p-3"
+      name="team_selector"
+      {{on "change" this.getMatchesByTeam}}
+    >
       {{#each this.allTeams as |teamName|}}
-        <option value="{{teamName}}">{{teamName}}</option>
+        <option
+          class="text-lg font-semibold"
+          value="{{teamName}}"
+        >{{teamName}}</option>
       {{/each}}
     </select>
   </label>
   <label for="order" class="mx-2 border-2 border-black">
     <span class="font-semibold text-xl px-2 py-3">Selecciona una jornada:</span>
-    <select name="date_selector" {{on "change" this.getMatchesByDate}}>
+    <select
+      class="p-3"
+      name="date_selector"
+      {{on "change" this.getMatchesByDate}}
+    >
       {{#each this.allFixtures as |jornada|}}
-        <option value="{{jornada}}">{{jornada}}</option>
+        <option
+          class="text-lg font-semibold"
+          value="{{jornada}}"
+        >{{jornada}}</option>
       {{/each}}
     </select>
   </label>
