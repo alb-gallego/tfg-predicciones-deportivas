@@ -50,6 +50,9 @@ const getAllMatches = (req, res) => {
             porcentaje_empate: row.porcentaje_empate,
             porcentaje_victoria_local: row.porcentaje_victoria_local,
             porcentaje_victoria_visitante: row.porcentaje_victoria_visitante,
+            goles_local_real: row.goles_local_real,
+            goles_visitante_real: row.goles_visitante_real,
+            ganador: row.ganador,
           };
           responseData.push(matchData);
         });
@@ -77,6 +80,9 @@ const getAllMatches = (req, res) => {
             porcentaje_empate: row.porcentaje_empate,
             porcentaje_victoria_local: row.porcentaje_victoria_local,
             porcentaje_victoria_visitante: row.porcentaje_victoria_visitante,
+            goles_local_real: row.goles_local_real,
+            goles_visitante_real: row.goles_visitante_real,
+            ganador: row.ganador,
           };
           responseData.push(matchData);
         });
@@ -115,6 +121,9 @@ const getMatchById = (req, res) => {
         porcentaje_empate: row.porcentaje_empate,
         porcentaje_victoria_local: row.porcentaje_victoria_local,
         porcentaje_victoria_visitante: row.porcentaje_victoria_visitante,
+        goles_local_real: row.goles_local_real,
+        goles_visitante_real: row.goles_visitante_real,
+        ganador: row.ganador,
       };
 
       res.setHeader("Content-Type", "application/json");
