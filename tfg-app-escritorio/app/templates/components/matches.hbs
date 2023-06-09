@@ -7,6 +7,8 @@
       name="team_selector"
       {{on "change" this.getMatchesByTeam}}
     >
+      <option class="text-lg font-semibold" value="">Ninguno</option>
+
       {{#each this.allTeams as |teamName|}}
         <option
           class="text-lg font-semibold"
@@ -22,7 +24,8 @@
       name="date_selector"
       {{on "change" this.getMatchesByDate}}
     >
-      {{#each this.allFixtures as |jornada|}}
+      <option class="text-lg font-semibold" value="">Ninguna</option>
+      {{#each this.allDates as |jornada|}}
         <option
           class="text-lg font-semibold"
           value="{{jornada}}"

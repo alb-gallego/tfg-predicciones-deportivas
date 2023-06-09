@@ -9,6 +9,7 @@ interface MatchesArgs {
 export default class Matches extends Component<MatchesArgs> {
   @tracked results: Array<Match> = this.args.matches;
   @tracked teamName: string = '';
+  @tracked date: string = '';
   get allTeams() {
     let res: Array<String> = [];
     this.args.matches.forEach((match) => {
@@ -19,7 +20,7 @@ export default class Matches extends Component<MatchesArgs> {
     return res.sort();
   }
 
-  get allFixtures() {
+  get allDates() {
     let res: Array<String> = [];
     this.args.matches.forEach((match) => {
       if (!res.includes(match.fecha)) {
@@ -32,12 +33,20 @@ export default class Matches extends Component<MatchesArgs> {
   async getMatchesByDate(event: Event) {
     event.preventDefault();
     const form = event.target as HTMLSelectElement;
-    this.teamName = form.value.toString();
-    const responsePartidos = await fetch(
-      `http://localhost:3000/partidos?fecha=${this.teamName}`
-    );
-    const partidos: Array<Match> = await responsePartidos.json();
-    this.results = this.#obtenerElementosComunes(this.results, partidos);
+    this.date = form.value.toString();
+    if (this.date === '') {
+      const responsePartidos = await fetch(`http://localhost:3000/partidos`);
+      const partidos: Array<Match> = await responsePartidos.json();
+      // this.results = this.#obtenerElementosComunes(this.results, partidos);
+      this.results = partidos;
+    } else {
+      const responsePartidos = await fetch(
+        `http://localhost:3000/partidos?fecha=${this.date}`
+      );
+      const partidos: Array<Match> = await responsePartidos.json();
+      // this.results = this.#obtenerElementosComunes(this.results, partidos);
+      this.results = partidos;
+    }
   }
 
   @action
@@ -45,11 +54,19 @@ export default class Matches extends Component<MatchesArgs> {
     event.preventDefault();
     const form = event.target as HTMLSelectElement;
     this.teamName = form.value.toString();
-    const responsePartidos = await fetch(
-      `http://localhost:3000/partidos?equipo=${this.teamName}`
-    );
-    const partidos: Array<Match> = await responsePartidos.json();
-    this.results = this.#obtenerElementosComunes(this.results, partidos);
+    if (this.teamName === '') {
+      const responsePartidos = await fetch(`http://localhost:3000/partidos`);
+      const partidos: Array<Match> = await responsePartidos.json();
+      // this.results = this.#obtenerElementosComunes(this.results, partidos);
+      this.results = partidos;
+    } else {
+      const responsePartidos = await fetch(
+        `http://localhost:3000/partidos?equipo=${this.teamName}`
+      );
+      const partidos: Array<Match> = await responsePartidos.json();
+      // this.results = this.#obtenerElementosComunes(this.results, partidos);
+      this.results = partidos;
+    }
   }
 
   #obtenerElementosComunes(array1: Array<Match>, array2: Array<Match>) {
@@ -59,6 +76,7 @@ export default class Matches extends Component<MatchesArgs> {
         return elemento2.id === elemento1.id;
       });
     });
+    console.log(elementosComunes);
 
     // Devolver el array con los elementos comunes
     return elementosComunes;

@@ -1,0 +1,85 @@
+<div class="flex items-center sm:flex-row flex-col justify-center text-3xl">
+  <h2 class="p-5 font-extrabold text-center">Porcentaje de marcadores acertados
+    en toda la temporada:</h2>
+  <p class="text-red-700 font-medium">{{this.scoreAccuracy}}%</p></div>
+<div class="flex flex-col items-center justify-center sm:flex-row max-w-full">
+
+  <div class="flex flex-col justify-center items-center p-5">
+    <h2 class="p-5 text-3xl font-extrabold max-w-md min-h-[180px] text-center">
+      Clasificación de mejores precisión de resultados por equipos
+    </h2>
+    <table>
+      <thead class="font-extrabold text-2xl text-orange-500">
+        <tr>
+          <th class="p-3">Ranking</th>
+          <th class="p-3">Equipo</th>
+          <th class="p-3">Precisión</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y-2 divide-solid text-center text-xl p-3">
+        {{#each this.rankingTeams as |resultado|}}
+          <tr>
+            <td
+              class="p-2 text-blue-500 font-extrabold"
+            >{{resultado.ranking}}</td>
+            <td class="p-2 font-medium">{{resultado.teamName}}</td>
+            <td class="p-2 font-medium">{{resultado.accuracy}}%</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex flex-col justify-center items-center p-5">
+    <h2
+      class="p-5 text-3xl font-extrabold max-w-md min-h-[180px] text-center"
+    >Clasificación de mejor precisión de resultados jugando el equipo como
+      VISITANTE</h2>
+    <table>
+      <thead class="font-extrabold text-2xl text-orange-500">
+        <tr>
+          <th class="p-3">Ranking</th>
+          <th class="p-3">Equipo</th>
+          <th class="p-3">Precisión</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y-2 divide-solid text-center text-xl">
+        {{#each this.rankingAwayTeamMatches as |resultado|}}
+          <tr>
+            <td
+              class="p-2 text-blue-500 font-extrabold"
+            >{{resultado.ranking}}</td>
+            <td class="p-2 font-medium">{{resultado.teamName}}</td>
+            <td class="p-2 font-medium">{{resultado.accuracy}}%</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="flex flex-col justify-center items-center p-5">
+    <h2
+      class="p-5 text-3xl font-extrabold max-w-md min-h-[180px] text-center"
+    >Clasificación de mejor precisión de resultados jugando el equipo como LOCAL</h2>
+    <table>
+      <thead class="font-extrabold text-2xl text-orange-500">
+        <tr>
+          <th class="p-3">Ranking</th>
+          <th class="p-3">Equipo</th>
+          <th class="p-3">Precisión</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y-2 divide-solid text-center text-xl">
+        {{#each this.rankingLocalTeamMatches as |resultado|}}
+          <tr>
+            <td
+              class="p-2 text-blue-500 font-extrabold"
+            >{{resultado.ranking}}</td>
+            <td class="p-2 font-medium">{{resultado.teamName}}</td>
+            <td class="p-2 font-medium">{{resultado.accuracy}}%</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</div>

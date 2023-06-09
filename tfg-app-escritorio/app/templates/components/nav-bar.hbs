@@ -1,19 +1,14 @@
 <nav
-  class="flex flex-col sm:flex-row justify-between items-center text-center pt-4 pl-12 pr-12"
+  class="flex flex-col md:flex-row justify-center items-center text-center p-5 text-lg"
 >
-  <div class="p-3">
-    <LinkTo @route="index">Inicio</LinkTo>
-  </div>
-  <div class="flex flex-col sm:flex-row sm:mt-4">
-    <div class="p-3 bg-orange-500 text-white rounded-md">
-      <LinkTo @route="index">
-        Inicio de sesión
-      </LinkTo>
-    </div>
-    <div class="p-3">
-      <LinkTo @route="index">
-        Registrate
-      </LinkTo>
-    </div>
-  </div>
+
+  <LinkTo
+    class="p-4 hover:bg-slate-300 rounded-md min-w-[8rem]"
+    @route="index"
+  >Inicio</LinkTo>
+  <LinkTo
+    class="p-4 hover:bg-slate-300 rounded-md min-w-[8rem]"
+    @route="statistics"
+  >Estadisticas</LinkTo>
+
 </nav>

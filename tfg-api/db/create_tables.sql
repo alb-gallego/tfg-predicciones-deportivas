@@ -15,8 +15,5 @@ CREATE TABLE partidos (
 	ganador TEXT
 );
 
-CREATE TABLE images (
-  id INTEGER PRIMARY KEY,
-  data BLOB
-);
+
 

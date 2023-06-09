@@ -10,4 +10,29 @@ export type Match = {
   porcentaje_victoria_local: number;
   porcentaje_victoria_visitante: number;
   porcentaje_empate: number;
+  goles_local_real: number;
+  goles_local_visitante: number;
+  ganador: 'H' | 'A' | 'D';
+};
+
+export type StatisticsObject = {
+  scoreStatistic: { scoreAccuracy: number };
+  statisticsLocalTeam: Array<StatisticsType>;
+  statisticsAwayTeam: Array<StatisticsType>;
+  statisticsBestTeamPredicctions: Array<StatisticsType>;
+};
+
+export type Probability = {
+  probLocal: number;
+  probVisitante: number;
+  probEmpate: number;
+};
+
+export type StatisticsType = {
+  teamName: string;
+  accuracy: number;
+};
+
+export type StatisticsRanking = StatisticsType & {
+  ranking: number;
 };
