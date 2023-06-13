@@ -15,10 +15,10 @@ services:
     volumes:
       - ./tfg-api:/src
       - /src/node_modules
-  tfg-app-escritorio:
-    container_name: tfg-app-escritorio
+  tfg-app-web:
+    container_name: tfg-app-web
     build:
-      context: tfg-app-escritorio
+      context: tfg-app-web
     command: npm run start
     ports:
       - "4200:4200"
@@ -30,5 +30,5 @@ services:
     depends_on:
       - tfg-api
     volumes:
-      - ./tfg-app-escritorio:/app
+      - ./tfg-app-web:/app
       - /src/node_modules
